@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de José</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    /* Dark mode */
+    body.dark { background: #121212; color: #e0e0e0; }
+    body.dark nav { background: rgba(20,20,20,0.95); }
+    body.dark .hero { background: linear-gradient(135deg, #2c3e50, #1abc9c); }
+    body.dark .project-card { background: #1e1e1e; }
+    body.dark footer { background: #111; }
+
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(44,62,80,0.95);
+      padding: 15px 30px;
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 1000;
+    }
+    nav .links a {
+      color: #ecf0f1; margin: 0 20px; text-decoration: none; font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav .links a:hover { color: #1abc9c; }
+
+    .toggle-btn {
+      background: #1abc9c; border: none; padding: 8px 15px;
+      border-radius: 20px; color: white; cursor: pointer; font-weight: bold;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover { background: #16a085; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      color: white; text-align: center; padding: 80px 20px 60px;
+    }
+    .hero h1 { font-size: 3.5em; margin-bottom: 15px; }
+    .hero p { font-size: 1.3em; margin-bottom: 30px; }
+    .hero a {
+      background: white; color: #16a085; padding: 12px 25px;
+      border-radius: 25px; text-decoration: none; font-weight: bold;
+      transition: all 0.3s;
+    }
+    .hero a:hover { background: #ecf0f1; transform: scale(1.05); }
+
+    /* Secciones */
+    section {
+      padding: 50px 20px; max-width: 1200px; margin: auto;
+      opacity: 0; transform: translateY(40px); transition: all 0.8s ease;
+    }
+    section.visible { opacity: 1; transform: translateY(0); }
+    h2 { text-align: center; margin-bottom: 40px; color: #2c3e50; font-size: 2.2em; }
+
+    /* Proyectos */
+    .projects {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: white; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .project-card img {
+      width: 100%; height: 80px; object-fit: cover;
+    }
+    .project-info { padding: 20px; }
+    .project-info h3 { margin: 0 0 10px; color: #2980b9; }
+    .project-info p { font-size: 0.95em; line-height: 1.5; }
+
+    /* Habilidades */
+    .skills { max-width: 800px; margin: auto; }
+    .skill { margin-bottom: 20px; }
+    .skill span { font-weight: bold; display: block; margin-bottom: 8px; }
+    .progress {
+      background: #ddd; border-radius: 20px; overflow: hidden; height: 20px;
+    }
+    .progress-bar {
+      height: 100%; width: 0; background: #1abc9c; transition: width 2s ease;
+    }
+    body.dark .progress { background: #333; }
+    body.dark .progress-bar { background: #16a085; }
+
+    /* Contacto */
+    .contact { text-align: center; font-size: 1.2em; }
+    .contact a { color: #16a085; text-decoration: none; font-weight: bold; }
+
+    /* Footer */
+    footer {
+      background: #2c3e50; color: white; text-align: center;
+      padding: 25px; margin-top: 40px;
+    }
+    footer a { color: #1abc9c; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>José</h1>
+    <p>Desarrollador Full Stack | Monterrey, México</p>
+    <a href="#proyectos">Ver mis proyectos</a>
+  </div>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>Soy un desarrollador apasionado por crear soluciones prácticas y mantenibles. 
+    Experto en .NET Core, MVC5, AJAX y jQuery, con experiencia en integración cliente-servidor y optimización de flujos de trabajo.</p>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x200" alt="Proyecto 1">
+        <div class="project-info">
+          <h3>Sistema de Pagos</h3>
+          <p>Aplicación web con integración de AJAX y model binding para flujos de pago robustos.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x200" alt="Proyecto 2">
+        <div class="project-info">
+          <h3>Configuración DNS Local</h3>
+          <p>Implementación de Dynu y No-IP para acceso remoto seguro a servidores locales en Monterrey.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x200" alt="Proyecto 3">
+        <div class="project-info">
+          <h3>Plataforma Educativa</h3>
+          <p>Herramienta interactiva para simplificar conceptos técnicos y apoyar tareas escolares.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Habilidades -->
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <div class="skills">
+    <div class="skill">
+      <span>.NET Core / MVC5</span>
+      <div class="progress">
+        <div class="progress-bar" data-value="90%"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>JavaScript / jQuery</span>
+      <div class="progress">
+        <div class="progress-bar" data-value="85%"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>SQL / Bases de Datos</span>
+      <div class="progress">
+        <div class="progress-bar" data-value="80%"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>HTML / CSS</span>
+      <div class="progress">
+        <div class="progress-bar" data-value="95%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <div class="contact">
+      <p>📧 Email: tuemail@ejemplo.com</p>
+      <p>🌐 GitHub: <a href="https://github.com/tuusuario" target="_blank">github.com/tuusuario</a></p>
+      <p>💼 LinkedIn: <a href="https://linkedin.com/in/tuusuario" target="_blank">linkedin.com/in/tuusuario</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 José - Todos los derechos reservados | Diseñado con ❤️</p>
+  </footer>
+
+  <!-- Script para animaciones y modo oscuro -->
+  <script>
+    // Animaciones al hacer scroll
+    const sections = document.querySelectorAll("section");
+    const options = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+        }
+      });
+    }, options);
+    sections.forEach(section => observer.observe(section));
+
+    // Animar barras de progreso
+    const progressBars = document.querySelectorAll(".progress-bar");
+    const skillsSection = document.querySelector("#habilidades");
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          progressBars.forEach(bar => {
+            bar.style.width = bar.getAttribute("data-value");
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    skillsObserver.observe(skillsSection);
+
+    // Toggle modo oscuro
+    function toggleDarkMode(){
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
