@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de José</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      /* Estilo para subir y separar la nota */
-  .nota-proyectos {
-    margin-bottom: 1.5rem; 
-    font-style: italic;
-    color: #444;
-  }
+    /* Estilo para subir y separar la nota */
+    .nota-proyectos {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: #444;
+    }
 
 
     body {
@@ -24,54 +29,122 @@
     }
 
     /* Dark mode */
-    body.dark { background: #121212; color: #e0e0e0; }
-    body.dark nav { background: rgba(20,20,20,0.95); }
-    body.dark .hero { background: linear-gradient(135deg, #2c3e50, #1abc9c); }
-    body.dark .project-card { background: #1e1e1e; }
-    body.dark footer { background: #111; }
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark nav {
+      background: rgba(20, 20, 20, 0.95);
+    }
+
+    body.dark .hero {
+      background: linear-gradient(135deg, #2c3e50, #1abc9c);
+    }
+
+    body.dark .project-card {
+      background: #1e1e1e;
+    }
+
+    body.dark footer {
+      background: #111;
+    }
 
     /* Navbar */
     nav {
-      position: fixed; top: 0; left: 0; width: 100%;
-      background: rgba(44,62,80,0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(44, 62, 80, 0.95);
       padding: 15px 30px;
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       z-index: 1000;
     }
+
     nav .links a {
-      color: #ecf0f1; margin: 0 20px; text-decoration: none; font-weight: bold;
+      color: #ecf0f1;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
       transition: color 0.3s;
     }
-    nav .links a:hover { color: #1abc9c; }
+
+    nav .links a:hover {
+      color: #1abc9c;
+    }
 
     .toggle-btn {
-      background: #1abc9c; border: none; padding: 8px 15px;
-      border-radius: 20px; color: white; cursor: pointer; font-weight: bold;
+      background: #1abc9c;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
       transition: background 0.3s;
     }
-    .toggle-btn:hover { background: #16a085; }
+
+    .toggle-btn:hover {
+      background: #16a085;
+    }
 
     /* Hero */
     .hero {
       background: linear-gradient(135deg, #1abc9c, #16a085);
-      color: white; text-align: center; padding: 80px 20px 60px;
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
     }
-    .hero h1 { font-size: 3.5em; margin-bottom: 15px; }
-    .hero p { font-size: 1.3em; margin-bottom: 30px; }
+
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+
     .hero a {
-      background: white; color: #16a085; padding: 12px 25px;
-      border-radius: 25px; text-decoration: none; font-weight: bold;
+      background: white;
+      color: #16a085;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
       transition: all 0.3s;
     }
-    .hero a:hover { background: #ecf0f1; transform: scale(1.05); }
+
+    .hero a:hover {
+      background: #ecf0f1;
+      transform: scale(1.05);
+    }
 
     /* Secciones */
     section {
-      padding: 50px 20px; max-width: 1200px; margin: auto;
-      opacity: 0; transform: translateY(40px); transition: all 0.8s ease;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
     }
-    section.visible { opacity: 1; transform: translateY(0); }
-    h2 { text-align: center; margin-bottom: 40px; color: #2c3e50; font-size: 2.2em; }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2c3e50;
+      font-size: 2.2em;
+    }
 
     /*Proyectos*/
     .projects {
@@ -85,7 +158,7 @@
       align-items: center;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s ease;
     }
@@ -151,50 +224,97 @@
       }
     }
 
-/* Responsive: en pantallas pequeñas la imagen va arriba */
-@media (max-width: 768px) {
-  .project-card {
-    flex-direction: column;
-    text-align: center;
-  }
+    /* Responsive: en pantallas pequeñas la imagen va arriba */
+    @media (max-width: 768px) {
+      .project-card {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  .project-img {
-    width: 100%;
-    max-width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-  }
+      .project-img {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
 
-  .project-info {
-    padding: 15px;
-  }
-}
+      .project-info {
+        padding: 15px;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+        /* una sola columna en pantallas pequeñas */
+      }
+
+
+    }
 
     /* Habilidades */
-    .skills { max-width: 800px; margin: auto; }
-    .skill { margin-bottom: 20px; }
-    .skill span { font-weight: bold; display: block; margin-bottom: 8px; }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* dos columnas iguales */
+      gap: 20px;
+      /* espacio entre columnas y filas */
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill span {
+      font-weight: bold;
+    }
+
     .progress {
-      background: #ddd; border-radius: 20px; overflow: hidden; height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 10px;
     }
+
     .progress-bar {
-      height: 100%; width: 0; background: #1abc9c; transition: width 2s ease;
+      background-color: #16a085;
+      height: 100%;
     }
-    body.dark .progress { background: #333; }
-    body.dark .progress-bar { background: #16a085; }
+
+    body.dark .progress {
+      background: #333;
+    }
+
+    body.dark .progress-bar {
+      background: #16a085;
+    }
 
     /* Contacto */
-    .contact { text-align: center; font-size: 1.2em; }
-    .contact a { color: #16a085; text-decoration: none; font-weight: bold; }
+    .contact {
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    .contact a {
+      color: #16a085;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
     /* Footer */
     footer {
-      background: #2c3e50; color: white; text-align: center;
-      padding: 25px; margin-top: 40px;
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
     }
-    footer a { color: #1abc9c; text-decoration: none; }
+
+    footer a {
+      color: #1abc9c;
+      text-decoration: none;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -212,134 +332,147 @@
   <div class="hero">
     <h1>José Juan Reyes A.</h1>
     <p>Desarrollador Full Stack | Monterrey, México</p>
-    <a href="#proyectos">Ver mis proyectos</a>
+    <a href="#proyectos">Mis proyectos</a>
   </div>
 
   <!-- Sobre mí -->
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Soy un desarrollador apasionado por crear soluciones prácticas y mantenibles. 
-    Experto en .NET Core, MVC5, AJAX y jQuery, con experiencia en integración cliente-servidor y optimización de flujos de trabajo.</p>
+    <p>Soy un desarrollador apasionado por crear soluciones prácticas y mantenibles. Con amplia experiencia en .NET
+      Core, MVC, AJAX y jQuery, disfruto trabajando en la integración cliente-servidor y en la optimización de flujos de
+      trabajo.</p>
   </section>
 
-<!-- Proyectos -->
-<section id="proyectos">
-  <h2>Proyectos</h2>
-  <p class="nota-proyectos"><strong>Nota:</strong> Los enlaces estarán activos únicamente de 9:00 a.m. a 2:00 p.m. (hora de Monterrey).</p>
-  
-  <div class="projects">
-    <div class="project-card">
-      <img src="Img/logo_mi_tienda_garcia.png" alt="Mi Tienda García" class="project-img">
-      <div class="project-info">
-        <h3>Mi Tienda García</h3>
-        <p>Aplicación web que implementa Ajax, jQuery, Bootstrap, inyección de dependencias, MVC y ADO.Net con tecnología .NET 9.</p>
-        <a href="https://tu-sitio-personalizado.com/tienda" target="_blank" class="btn-project">Ver proyecto</a>
+  <!-- Proyectos -->
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <p class="nota-proyectos"><strong>Nota:</strong> Los enlaces estarán activos únicamente de 9:00 a.m. a 2:00 p.m.
+      (hora de Monterrey).</p>
+
+    <div class="projects">
+      <div class="project-card">
+        <img src="Img/logo_mi_tienda_garcia.png" alt="Mi Tienda García" class="project-img">
+        <div class="project-info">
+          <h3>Mi Tienda García</h3>
+          <p>Aplicación web que implementa Ajax, jQuery, Bootstrap, inyección de dependencias, MVC y ADO.Net con
+            tecnología .NET 9</p>
+          <a href="https://tu-sitio-personalizado.com/tienda" target="_blank" class="btn-project">Ver proyecto</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x200" alt="Proyecto 2" class="project-img">
+        <div class="project-info">
+          <h3>Manejo de Presupuestos</h3>
+          <p>Aplicación web que implementa Ajax, jQuery, MVC, inyección de dependencias y ADO.Net con tecnología .NET 9
+          </p>
+          <a href="https://tu-sitio-personalizado.com/presupuestos" target="_blank" class="btn-project">Ver proyecto</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <img src="https://via.placeholder.com/600x200" alt="Proyecto 2" class="project-img">
-      <div class="project-info">
-        <h3>Manejo de Presupuestos</h3>
-        <p>Aplicación web que implementa Ajax, jQuery, MVC, inyección de dependencias y ADO.Net con tecnología .NET 9.</p>
-        <a href="https://tu-sitio-personalizado.com/presupuestos" target="_blank" class="btn-project">Ver proyecto</a>
+  <script>
+    // Obtener todos los enlaces de proyectos
+    const links = document.querySelectorAll(".btn-project");
+    const ahora = new Date();
+    const hora = ahora.getHours();
+
+    // Validar horario (9:00 a 14:00)
+    if (hora < 9 || hora >= 14) {
+      links.forEach(link => {
+        link.removeAttribute("href");
+        link.textContent = "Disponible de 9:00 a 14:00";
+        link.style.pointerEvents = "none";
+        link.style.color = "gray";
+      });
+    }
+  </script>
+
+  <!-- Habilidades -->
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skills">
+      <div class="skill">
+        <span>.NET Core MVC</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>JavaScript / jQuery</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>MS SQL / Bases de Datos</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:70%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>HTML / CSS</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:80%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>Bootstrap 5</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>GitHub / Control de versiones</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:25%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>Arquitectura de Software</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>Patrones de Diseño</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:40%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>PL/SQL (Oracle)</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>Flutter / Dart (Móvil)</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:5%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>REST APIs</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:70%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>SOAP Web Services (ASMX)</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:65%"></div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>Entity Framework</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%"></div>
+        </div>
       </div>
     </div>
-
-    <div class="project-card">
-      <img src="https://via.placeholder.com/600x200" alt="Proyecto 3" class="project-img">
-      <div class="project-info">
-        <h3>Plataforma Educativa</h3>
-        <p>Herramienta interactiva para simplificar conceptos técnicos y apoyar tareas escolares.</p>
-        <a href="https://tu-sitio-personalizado.com/educativa" target="_blank" class="btn-project">Ver proyecto</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-  // Obtener todos los enlaces de proyectos
-  const links = document.querySelectorAll(".btn-project");
-  const ahora = new Date();
-  const hora = ahora.getHours();
-
-  // Validar horario (9:00 a 14:00)
-  if (hora < 9 || hora >= 14) {
-    links.forEach(link => {
-      link.removeAttribute("href");
-      link.textContent = "Disponible de 9:00 a 14:00";
-      link.style.pointerEvents = "none";
-      link.style.color = "gray";
-    });
-  }
-</script>
-
-<!-- Habilidades -->
-<section id="habilidades">
-  <h2>Habilidades</h2>
-  <div class="skills">
-    <div class="skill">
-      <span>.NET Core / MVC5</span>
-      <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
-    </div>
-    <div class="skill">
-      <span>JavaScript / jQuery</span>
-      <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <span>SQL / Bases de Datos</span>
-      <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
-    </div>
-    <div class="skill">
-      <span>HTML / CSS</span>
-      <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Bootstrap 5</span>
-      <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
-    </div>
-    <div class="skill">
-      <span>GitHub / Control de versiones</span>
-      <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Arquitectura de Software</span>
-      <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Patrones de Diseño</span>
-      <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
-    </div>
-    <div class="skill">
-      <span>PL/SQL (Oracle)</span>
-      <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Flutter / Dart (Móvil)</span>
-      <div class="progress"><div class="progress-bar" style="width:55%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Node.js / Express</span>
-      <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
-    </div>
-    <div class="skill">
-      <span>React.js / Angular</span>
-      <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
-    </div>
-    <div class="skill">
-      <span>REST APIs / GraphQL</span>
-      <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Cloud (Azure / AWS)</span>
-      <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
-    </div>
-    <div class="skill">
-      <span>Docker / CI-CD</span>
-      <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -350,13 +483,14 @@
     <div class="contact">
       <p>📧 Email: josephjohnreyes@gmail.com</p>
       <p>🌐 GitHub: <a href="http://github.com/josejuanmax" target="_blank">github.com/josejuanmax</a></p>
-      <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/jose-juan-reyes/" target="_blank">www.linkedin.com/in/jose-juan-reyes</a></p>
+      <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/jose-juan-reyes/"
+          target="_blank">www.linkedin.com/in/jose-juan-reyes</a></p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 José - Todos los derechos reservados | Diseñado con ❤️</p>
+    <p>&copy; 2026 José - Todos los derechos reservados</p>
   </footer>
 
   <!-- Script para animaciones y modo oscuro -->
@@ -366,7 +500,7 @@
     const options = { threshold: 0.2 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
           entry.target.classList.add("visible");
         }
       });
@@ -374,10 +508,11 @@
     sections.forEach(section => observer.observe(section));
 
     // Toggle modo oscuro
-    function toggleDarkMode(){
+    function toggleDarkMode() {
       document.body.classList.toggle("dark");
     }
   </script>
 
 </body>
+
 </html>
