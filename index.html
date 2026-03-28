@@ -363,8 +363,8 @@
   <!-- Proyectos -->
   <section id="proyectos">
     <h2>Proyectos</h2>
-    <p class="nota-proyectos"><strong>Nota:</strong> Los enlaces estarán activos únicamente de 9:00 a.m. a 2:00 p.m.
-      (hora de Monterrey). Para entrar al proyecto presionar en "Visit Site" </p>
+    <p class="nota-proyectos"><strong>Nota:</strong> Los enlaces estarán activos únicamente de 9:00 a.m. a 6:00 p.m.
+      (hora de Monterrey). Presiona "Visit Site" para entrar al proyecto</p>
 
     <div class="projects">
       <div class="project-card">
@@ -423,10 +423,10 @@
     const hora = ahora.getHours();
 
     // Validar horario (9:00 a 14:00)
-    if (hora < 9 || hora >= 14) {
+    if (hora < 9 || hora >= 18) {
       links.forEach(link => {
         link.removeAttribute("href");
-        link.textContent = "Disponible de 9:00 a 14:00";
+        link.textContent = "Disponible de 9:00 a 18:00";
         link.style.pointerEvents = "none";
         link.style.color = "gray";
       });
