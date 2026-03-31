@@ -355,16 +355,21 @@
   <!-- Sobre mí -->
   <section id="sobre-mi">
     <h2>Sobre mí</h2>
-    <p>Soy un desarrollador apasionado por crear soluciones prácticas y mantenibles. Con amplia experiencia en .NET
+    <p style="text-align: justify;">Soy un desarrollador apasionado por crear soluciones prácticas y mantenibles. Con
+      experiencia en .NET
       Core, MVC, AJAX y jQuery, disfruto trabajando en la integración cliente-servidor y en la optimización de flujos de
-      trabajo.</p>
+      trabajo. En 2026 inicié la actualización de mi portafolio, incorporando nuevos proyectos conforme practico y
+      exploro tecnologías modernas, con el objetivo de mantenerme vigente y aportar soluciones innovadoras, trabajando
+      en equipo y resolviendo retos técnicos con enfoque práctico.</p>
   </section>
 
   <!-- Proyectos -->
   <section id="proyectos">
     <h2>Proyectos</h2>
-    <p class="nota-proyectos"><strong>Nota:</strong> Los enlaces estarán activos únicamente de 9:00 a.m. a 6:00 p.m.
-      (hora de Monterrey). Presiona "Visit Site" para entrar al proyecto</p>
+    <!--<p class="nota-proyectos"><strong>Nota:</strong> Los enlaces estarán activos únicamente de 9:00 a.m. a 6:00 p.m.
+      (hora de Monterrey). Presiona "Visit Site" para entrar al proyecto</p>-->
+
+    <p class="nota-proyectos"><strong>Nota:</strong> Presiona "Visit Site" para entrar al sitio</p>
 
     <div class="projects">
       <div class="project-card">
@@ -418,19 +423,19 @@
 
   <script>
     // Obtener todos los enlaces de proyectos
-    const links = document.querySelectorAll(".btn-project");
-    const ahora = new Date();
-    const hora = ahora.getHours();
-
-    // Validar horario (9:00 a 14:00)
-    if (hora < 9 || hora >= 18) {
-      links.forEach(link => {
-        link.removeAttribute("href");
-        link.textContent = "Disponible de 9:00 a 18:00";
-        link.style.pointerEvents = "none";
-        link.style.color = "gray";
-      });
-    }
+    /*  const links = document.querySelectorAll(".btn-project");
+      const ahora = new Date();
+      const hora = ahora.getHours();
+  
+      // Validar horario (9:00 a 14:00)
+      if (hora < 9 || hora >= 18) {
+        links.forEach(link => {
+          link.removeAttribute("href");
+          link.textContent = "Disponible de 9:00 a 18:00";
+          link.style.pointerEvents = "none";
+          link.style.color = "gray";
+        });
+      }*/
   </script>
 
   <!-- Habilidades -->
