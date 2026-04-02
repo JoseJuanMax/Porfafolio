@@ -128,7 +128,7 @@
 
     /* Secciones */
     section {
-      padding: 50px 20px;
+      padding: 30px 20px;
       max-width: 1200px;
       margin: auto;
       opacity: 0;
@@ -155,32 +155,34 @@
       gap: 30px;
     }
 
-    .project-card {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
+ .project-card {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espacio entre logo, imagen y texto */
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+}
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
+.project-logo {
+  width: 40%;       /* tamaño del logo */
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+}
 
-    .project-img {
-      width: 40%;
-      max-width: 300px;
-      height: auto;
-      object-fit: contain;
-      border-right: 1px solid #eee;
-    }
+.project-img {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-right: 1px solid #eee;
+  cursor: pointer;   /* mano al pasar el cursor */
+}
 
-    .project-info {
-      flex: 1;
-      padding: 20px;
-    }
+.project-info {
+  flex: 1; /* ocupa el resto del espacio */
+}
 
     .project-info h3 {
       margin-bottom: 10px;
@@ -268,41 +270,46 @@
     }
 
     /* Habilidades */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      /* dos columnas iguales */
-      gap: 20px;
-      /* espacio entre columnas y filas */
-    }
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* dos columnas iguales */
+  gap: 20px; /* espacio entre columnas y filas */
+}
 
-    .skill {
-      margin-bottom: 15px;
-    }
+.skill {
+  margin-bottom: 15px;
+}
 
-    .skill span {
-      font-weight: bold;
-    }
+.skill span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
 
-    .progress {
-      background-color: #e0e0e0;
-      border-radius: 5px;
-      overflow: hidden;
-      height: 10px;
-    }
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 25px; /* aumentamos altura para que el texto se vea bien */
+}
 
-    .progress-bar {
-      background-color: #16a085;
-      height: 100%;
-    }
+.progress-bar {
+  background-color: #16a085; /* tu color original */
+  height: 100%;
+  display: flex;
+  align-items: center;       /* centra verticalmente */
+  justify-content: center;   /* centra horizontalmente */
+  font-weight: bold;
+  color: white;
+}
 
-    body.dark .progress {
-      background: #333;
-    }
+body.dark .progress {
+  background: #333;
+}
 
-    body.dark .progress-bar {
-      background: #16a085;
-    }
+body.dark .progress-bar {
+  background: #16a085;
+}
 
     /* Contacto */
     .contact {
@@ -329,6 +336,81 @@
       color: #1abc9c;
       text-decoration: none;
     }
+.tech-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; /* espacio reducido entre badges */
+}
+
+.tag {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Colores personalizados */
+.csharp { background-color: #9b4f96; }        /* morado */
+.aspnet { background-color: #007acc; }        /* azul fuerte */
+.mvc { background-color: #00bfa5; }           /* verde agua */
+.ado { background-color: #ff7043; }           /* naranja */
+.bootstrap { background-color: #7952b3; }     /* púrpura Bootstrap */
+.jquery { background-color: #0769ad; }        /* azul jQuery */
+.ajax { background-color: #ffca28; color:#333;} /* amarillo AJAX */
+.sqlserver { background-color: #CC2927; }     /* rojo SQL Server */
+.efcore { background-color: #2ecc71; }        /* verde brillante EF Core */
+.jwt { background-color: #f39c12; }           /* naranja dorado JWT */
+.ratelimit { background-color: #34495e; }     /* gris oscuro AspNetCoreRateLimit */
+.swagger { background-color: #85c341; }       /* verde Swagger */
+.dapper { background-color: #43a047; }        /* verde intenso Dapper */
+.di { background-color: #6a1b9a; }            /* púrpura profundo Inyección de Dependencias */
+
+/* Modal (oculto por defecto) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999; 
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Imagen dentro del modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  border-radius: 8px;
+}
+
+/* Texto debajo de la imagen */
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  color: #ccc;
+  font-size: 18px;
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #bbb;
+}
   </style>
 </head>
 
@@ -347,9 +429,18 @@
 
   <!-- Hero -->
   <div class="hero">
-    <h1>José Juan Reyes A.</h1>
-    <p>Desarrollador Full Stack | Monterrey, México</p>
-    <a href="#proyectos">Mis proyectos</a>
+    <div class="row">
+      <div class="col-2">
+        <img src="Img/logo_jose_reyes.png" alt="" style="max-height: 198px;">
+      </div>
+      <div class="col-8">
+
+        <h1>José Juan Reyes A.</h1>
+        <p>Desarrollador Full Stack | Monterrey, México</p>
+        <a href="#proyectos">Mis proyectos</a>
+      </div>
+    </div>
+
   </div>
 
   <!-- Sobre mí -->
@@ -373,26 +464,40 @@
 
     <div class="projects">
       <div class="project-card">
-        <img src="Img/logo_mi_tienda_garcia.png" alt="Mi Tienda García" class="project-img">
+        <img src="Img/logo_mi_tienda_garcia.png" alt="Logo API REST Clientes" class="project-logo">
+        <img src="Img/screenshot_mitienda.png" alt="Mi Tienda García" class="project-img" onclick="openModal(this)">
         <div class="project-info">
           <h3>Mi Tienda García</h3>
-          <p>Proyecto desarrollado con C#, ASP.NET Core 9, utilizando MVC, ADO.NET, inyección de dependencias, AJAX,
-            jQuery
-            y Bootstrap para una arquitectura escalable y moderna.
-          </p>
+          <div class="tech-tags">
+              <span class="tag csharp">C#</span>
+              <span class="tag aspnet">ASP.NET Core 9</span>
+              <span class="tag mvc">ASP.NET Core MVC</span>
+              <span class="tag ado">ADO.NET</span>
+              <span class="tag bootstrap">Bootstrap 5</span>
+              <span class="tag jquery">jQuery</span>
+              <span class="tag ajax">AJAX</span>
+              <span class="tag sqlserver">MS SQL SERVER</span>
+          </div>
           <a href="https://nonhomogeneous-nonrepressed-mechelle.ngrok-free.dev/MiTienda" target="_blank"
             class="btn-project">Ver proyecto</a>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="Img/logo_mi_presupuesto.png" alt="Proyecto 2" class="project-img">
+        <img src="Img/logo_mi_presupuesto.png" alt="Logo API REST Clientes" class="project-logo">
+        <img src="Img/screenshot_mipresupuesto.png" alt="Mi Presupuesto" class="project-img" onclick="openModal(this)">
         <div class="project-info">
           <h3>Manejo de Presupuestos</h3>
-          <p>Proyecto desarrollado con C#, ASP.NET Core 9, empleando MVC, inyección de dependencias, Dapper y ADO.NET
-            para
-            una arquitectura limpia y eficiente.
-          </p>
+          <div class="tech-tags">
+              <span class="tag csharp">C#</span>
+              <span class="tag aspnet">ASP.NET Core 9</span>
+              <span class="tag mvc">ASP.NET Core MVC</span>
+              <span class="tag ado">ADO.NET</span>
+              <span class="tag bootstrap">Bootstrap 5</span>
+              <span class="tag sqlserver">MS SQL SERVER</span>
+              <span class="tag dapper">DAPPER</span>
+              <span class="tag di">INYECCION DEPENDENCIAS</span>
+          </div>
           <a href="https://nonhomogeneous-nonrepressed-mechelle.ngrok-free.dev/MiPresupuesto" target="_blank"
             class="btn-project position-relative">
             Ver proyecto
@@ -405,13 +510,21 @@
       </div>
 
       <div class="project-card">
-        <img src="Img/logo_api_clientes_ficticios.png" alt="Proyecto 2" class="project-img">
+        <img src="Img/logo_api_clientes_ficticios.png" alt="Logo API REST Clientes" class="project-logo">
+        <img src="Img/screenshot_apiclientes.png" alt="API REST Clientes" class="project-img" onclick="openModal(this)">
         <div class="project-info">
-          <h3>API Clientes</h3>
-          <p>API REST (solo consulta) en ASP.NET Core con SQL Server y Entity Framework Core. Implementa autenticación
-            JWT, rate limiting con AspNetCoreRateLimit, y endpoints documentados con Swagger. La arquitectura está
-            organizada en capas (Models, Service, Controllers).
-          </p>
+          <h3>API REST Clientes (solo consulta)</h3>
+          <div class="tech-tags">
+              <span class="tag csharp">C#</span>
+              <span class="tag aspnet">ASP.NET Core 9</span>
+              <span class="tag ado">ADO.NET</span>
+              <span class="tag sqlserver">MS SQL SERVER</span>
+              <span class="tag di">INYECCION DEPENDENCIAS</span>
+              <span class="tag mvc">ASP.NET Core MVC</span>
+              <span class="tag jwt">JWT</span>
+              <span class="tag ratelimit">AspNetCoreRateLimit</span>
+              <span class="tag swagger">Swagger</span>
+          </div>
           <a href="https://nonhomogeneous-nonrepressed-mechelle.ngrok-free.dev/ApiClientes/swagger/index.html"
             target="_blank" class="btn-project position-relative">
             Ver proyecto
@@ -420,6 +533,14 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Modal -->
+<div id="imgModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="caption"></div>
+</div>
 
   <script>
     // Obtener todos los enlaces de proyectos
@@ -445,97 +566,103 @@
       <div class="skill">
         <span>.NET Core MVC</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>JavaScript / jQuery</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>MS SQL / Bases de Datos</span>
         <div class="progress">
-          <div class="progress-bar" style="width:70%"></div>
+          <div class="progress-bar" style="width:70%">70%</div>
         </div>
       </div>
       <div class="skill">
         <span>HTML / CSS</span>
         <div class="progress">
-          <div class="progress-bar" style="width:80%"></div>
+          <div class="progress-bar" style="width:80%">80%</div>
         </div>
       </div>
       <div class="skill">
         <span>Bootstrap 5</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>GitHub / Control de versiones</span>
         <div class="progress">
-          <div class="progress-bar" style="width:10%"></div>
+          <div class="progress-bar" style="width:10%">10%</div>
         </div>
       </div>
       <div class="skill">
         <span>Arquitectura de Software</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>Patrones de Diseño</span>
         <div class="progress">
-          <div class="progress-bar" style="width:40%"></div>
+          <div class="progress-bar" style="width:40%">40%</div>
         </div>
       </div>
       <div class="skill">
         <span>PL/SQL (Oracle)</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>Flutter / Dart (Móvil)</span>
         <div class="progress">
-          <div class="progress-bar" style="width:5%"></div>
+          <div class="progress-bar" style="width:5%">5%</div>
         </div>
       </div>
       <div class="skill">
         <span>REST APIs</span>
         <div class="progress">
-          <div class="progress-bar" style="width:70%"></div>
+          <div class="progress-bar" style="width:70%">70%</div>
         </div>
       </div>
       <div class="skill">
         <span>SOAP Web Services (ASMX)</span>
         <div class="progress">
-          <div class="progress-bar" style="width:65%"></div>
+          <div class="progress-bar" style="width:65%">65%</div>
         </div>
       </div>
       <div class="skill">
         <span>Entity Framework</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>Crystal Reports (MS Visual Studio 2010, 2013, 2022)</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>SQL Server Reporting Services</span>
         <div class="progress">
-          <div class="progress-bar" style="width:50%"></div>
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
       <div class="skill">
         <span>Razor</span>
         <div class="progress">
-          <div class="progress-bar" style="width:20%"></div>
+          <div class="progress-bar" style="width:20%">20%</div>
+        </div>
+      </div>
+      <div class="skill">
+        <span>C #</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:50%">50%</div>
         </div>
       </div>
     </div>
@@ -578,6 +705,29 @@
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
     }
+
+function openModal(imgElement) {
+  var modal = document.getElementById("imgModal");
+  var modalImg = document.getElementById("modalImage");
+  var captionText = document.getElementById("caption");
+
+  modal.style.display = "block";
+  modalImg.src = imgElement.src;
+  captionText.innerHTML = imgElement.alt;
+}
+
+function closeModal() {
+  var modal = document.getElementById("imgModal");
+  modal.style.display = "none";
+}
+
+// Cerrar modal al hacer click fuera de la imagen
+window.onclick = function(event) {
+  var modal = document.getElementById("imgModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
   </script>
 
 </body>
