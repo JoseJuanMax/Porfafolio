@@ -400,6 +400,8 @@ body.dark .progress-bar {
 .knockoutjs { background-color: #e53935; }   /* rojo KnockoutJS */
 .oauth { background-color: #3c9cd7; }   /* azul OAuth */
 .entityframework { background-color: #1abc9c; }   /* verde azulado Entity Framework */
+.oracleplsql { background-color: #f80000; }   /* rojo Oracle clásico */
+.redis { background-color: #d82c20; }         /* rojo intenso Redis */
 
 
 /* Modal (oculto por defecto) */
@@ -496,6 +498,7 @@ body.dark .progress-bar {
       (hora de Monterrey). Presiona "Visit Site" para entrar al proyecto</p>-->
 
     <p class="nota-proyectos"><strong>Nota:</strong> Presiona <b>"Ver Proyecto"</b> para verlo en acción (la primera vez debes presionar "Visit Site" para entrar al sitio)</p>
+    <p class="nota-proyectos">Por el momento no está disponible "Ver proyecto" por temas de servidor, pronto estará activo nuevamente.</p>
 
     <div class="projects">
       <div class="project-card">
@@ -514,7 +517,7 @@ body.dark .progress-bar {
               <span class="tag sqlserver">MS SQL SERVER</span>
           </div>
           <a href="https://nonhomogeneous-nonrepressed-mechelle.ngrok-free.dev/MiTienda" target="_blank"
-            class="btn-project">Ver proyecto</a>
+            class="btn-project" style="pointer-events: none;">Ver proyecto</a>
         </div>
       </div>
 
@@ -534,7 +537,7 @@ body.dark .progress-bar {
               <span class="tag di">INYECCION DEPENDENCIAS</span>
           </div>
           <a href="https://nonhomogeneous-nonrepressed-mechelle.ngrok-free.dev/MiPresupuesto" target="_blank"
-            class="btn-project position-relative">
+            class="btn-project position-relative" style="pointer-events: none;">
             Ver proyecto
           </a>
         </div>
@@ -557,7 +560,7 @@ body.dark .progress-bar {
               <span class="tag swagger">Swagger</span>
           </div>
           <a href="https://nonhomogeneous-nonrepressed-mechelle.ngrok-free.dev/ApiClientes/swagger/index.html"
-            target="_blank" class="btn-project position-relative">
+            target="_blank" class="btn-project position-relative" style="pointer-events: none;">
             Ver proyecto
           </a>
         </div>
@@ -581,7 +584,7 @@ body.dark .progress-bar {
               <span class="tag entityframework">Entity Framework Core</span>
           </div>
           <a 
-            class="btn-project position-relative ">
+            class="btn-project position-relative" style="pointer-events: none;">
             Ver proyecto
             <span class="position-absolute top-0 start-100 translate-middle badge-project">
               En desarrollo
@@ -598,6 +601,8 @@ body.dark .progress-bar {
           <h3>PharmaInvetory</h3>
           <div class="tech-tags">
               <span class="tag csharp">C#</span>
+              <span class="tag oracleplsql">Oracle PL/SQL</span>
+              <span class="tag redis">Redis</span>
           </div>
         </div>
       </div>
